@@ -12,6 +12,8 @@ services:
     volumes:
       - directus_db_data:/var/lib/postgresql/data
       - ./init:/docker-entrypoint-initdb.d
+    networks:
+      - directus-net
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
@@ -40,8 +42,13 @@ services:
     volumes:
       - directus_uploads:/directus/uploads
       - directus_extensions:/directus/extensions
+    networks:
+      - directus-net
 
 volumes:
   directus_db_data:
   directus_uploads:
   directus_extensions:
+  
+networks:
+  - directus-net
