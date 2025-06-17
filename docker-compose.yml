@@ -51,4 +51,4 @@ volumes:
   directus_extensions:
   
 networks:
-  - directus-net
+  directus-net:
