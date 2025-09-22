@@ -7,6 +7,7 @@ services:
     environment:
       POSTGRES_DB: directus
       POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     env_file:
       - .env
     volumes:
@@ -30,12 +31,13 @@ services:
         condition: service_healthy
     environment:
       ADMIN_EMAIL: "contact@traffy.io"
-      ADMIN_PASSWORD: "Edmonton2001!"
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
       DB_CLIENT: pg
       DB_HOST: postgres
       DB_PORT: 5432
       DB_DATABASE: directus
       DB_USER: postgres
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
       AUTH_LOGIN_FIELD: username
     env_file:
       - .env
