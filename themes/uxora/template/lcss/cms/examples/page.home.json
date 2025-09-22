@@ -1,0 +1,44 @@
+{
+  "id": "pg_home",
+  "version": 1,
+  "components": [
+    {
+      "id": "blk_hero",
+      "type": "cmp.hero.v1",
+      "props": {
+        "headline": "Welcome to Uxora",
+        "subheadline": "Build editable sites with inline JSON documents.",
+        "cta": { "label": "Get Started", "href": "#pricing" },
+        "image": { "file": null, "alt": "" }
+      }
+    },
+    {
+      "id": "blk_pricing",
+      "type": "cmp.pricing.v1",
+      "props": {
+        "title": "Pricing",
+        "subtitle": "Choose the plan that's right for you.",
+        "tiers": [
+          {
+            "name": "Starter",
+            "price": "$9",
+            "description": "For individuals and hobby projects.",
+            "cta": { "label": "Select", "href": "#" }
+          },
+          {
+            "name": "Team",
+            "price": "$29",
+            "description": "Collaborate with your entire team.",
+            "cta": { "label": "Select", "href": "#" }
+          },
+          {
+            "name": "Enterprise",
+            "price": "Contact",
+            "description": "Tailored solutions for large organizations.",
+            "cta": { "label": "Contact sales", "href": "#" }
+          }
+        ]
+      }
+    }
+  ]
+}
