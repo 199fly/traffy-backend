@@ -3,7 +3,7 @@ version: "3.8"
 services:
   postgres:
     image: postgis/postgis:15-3.3
-    container_name: directus-db
+    container_name: traffy-db-v2
     environment:
       POSTGRES_DB: directus
       POSTGRES_USER: postgres
@@ -22,7 +22,7 @@ services:
 
   directus:
     image: directus/directus:latest
-    container_name: directus-app
+    container_name: traffy-v2-app
     ports:
       - 8055:8055
     depends_on:
