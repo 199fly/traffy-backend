@@ -21,6 +21,8 @@ services:
       retries: 5
 
   directus:
+    PROJECT_NAME: "Traffy CMS - V2"
+    SHCEMA_NAME: "IMPORT"
     image: directus/directus:latest
     container_name: directus-app
     ports:
@@ -29,7 +31,7 @@ services:
       postgres:
         condition: service_healthy
     environment:
-      ADMIN_EMAIL: "199flymarketing@gmail.com"
+      ADMIN_EMAIL: "contact@traffy.io"
       ADMIN_PASSWORD: "Edmonton2001!"
       DB_CLIENT: pg
       DB_HOST: postgres
@@ -40,6 +42,7 @@ services:
     env_file:
       - .env
     volumes:
+      - ./schema-sync:/directus/schema-sync
       - directus_uploads:/directus/uploads
       - directus_extensions:/directus/extensions
     networks:
